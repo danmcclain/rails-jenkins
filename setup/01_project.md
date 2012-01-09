@@ -9,6 +9,20 @@ If you plan to use RVM, switch to `jenkins` and install RVM
     $ bash -s stable < <(curl -s \
     https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
 
+To trust the `.rvmrc` file in your project automatically, add the
+following to `/var/lib/jenkins/.rvmrc`
+
+`export rvm_trust_rvmrcs_flag=1`
+
+!SLIDE commandline smaller
+# Configuring the jenkins user #
+## Loading RVM ##
+
+Create the file `/var/lib/jenkins/.bashrc` with the following content
+
+`[ -s "/var/lib/jenkins/.rvm/scripts/rvm" ]  && source "/var/lib/jenkins/.rvm/scripts/rvm"  # This loads RVM into a shell session.`
+
+
 !SLIDE commandline small
 # Configuring the jenkins user #
 ## Creating ssh keys ##
@@ -37,3 +51,64 @@ Set a Post-Receive URL of your GitHub project to:
 # Configuring the project #
 ## Creating a new job ##
 ![New Job Name](new-job-name.png)
+
+
+!SLIDE small center
+# Configuring the project #
+## Configuring source control ##
+
+Set the GitHub Project setting to 
+
+`git@github.com:<username>/<project>.git`
+
+This is necessary for the GitHub post-receive trigger.
+
+![GitHub Project](github-project.png)
+
+!SLIDE small center
+# Configuring the project #
+## Configuring source control ##
+
+In the **Source Code Management** section, select **git**, and use  
+
+`git@github.com:<user name>/<project>.git` 
+
+as the Repository URL
+
+![Git Config](git-config.png)
+
+!SLIDE small center
+# Configuring the project #
+## Configuring the build triggers ##
+
+In the **Build Trigger** section, select **Build when a change is pushed to GitHub**
+ 
+![Build Triggers](build-trigger.png)
+
+!SLIDE
+# What have we done so far? #
+Jenkins is now set up to pull a copy of the project whenever a commit is
+pushed to the project on GitHub.
+
+We are not running any tests yet.
+
+!SLIDE
+# Configuring the build step #
+We want to add a build step now.
+
+Click **Add Build Step** and choose **Execute Shell**
+
+![Add build step](add-build-step.png)
+
+!SLIDE  smaller
+# Configuring the build step #
+We'll use the following build step:
+
+    source ~/.bashrc         # Loads RVM
+    cd .      # Loads the RVM environment set in the .rvmrc file
+    cp config/database.yml.example config/database.yml  
+    # creates a database.yml
+    bundle install           # Installs gems
+    rake db:schema:load      # Loads all the database schema
+    rake                     # Runs RSpec
+    
