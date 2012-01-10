@@ -9,6 +9,10 @@ If you plan to use RVM, switch to `jenkins` and install RVM
     $ bash -s stable < <(curl -s \
     https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
 
+!SLIDE commandline small
+# Configuring the jenkins user #
+## Trusting `.rvmrc` files ##
+
 To trust the `.rvmrc` file in your project automatically, add the
 following to `/var/lib/jenkins/.rvmrc`
 
@@ -34,7 +38,7 @@ Add an SSH Public Key to GitHub using the contents of `/var/lib/jenkins/.ssh/id_
 !SLIDE 
 # Configuring the project #
 ## Setting up the post-receive hook in GitHub ##
-Set a Post-Receive URL of your GitHub project to:
+Set a Post-Receive URL on your GitHub project to:
 
     http://<jenkins domain>/github-webhook/
 
@@ -144,11 +148,20 @@ the workspace and RSpec's HTML formatter
 ![RSpec HTML](rspec-html.png)
 
 !SLIDE
+# Gotchas #
+
+* Make sure gem requirements are installed (postgres lib headers)
+* Make sure you install the ruby you use in your `.rvmrc`
+
+!SLIDE small
 # More Information #
 
-### [Jenkins](http://jenkins-ci.org) ###
+## Jenkins ##
+[Jenkins](http://jenkins-ci.org)
 
+## My article on using Jenkins with Rails, RVM, RSpec, Cucumber & Capistrano ##
+[http://danseaver.com/blog/2011/11/22/using-jenkins-with-rails/](http://danseaver.com/blog/2011/11/22/using-jenkins-with-rails/)
 
-### [My article on using Jenkins with Rails, RVM, RSpec, Cucumber & Capistrano](http://danseaver.com/blog/2011/11/22/using-jenkins-with-rails/) ###
-
-
+## These Slides ##
+[http://rails-jenkins.danseaver.com](http://rails-jenkins.danseaver.com)
+[https://github.com/danseaver/rails-jenkins](https://github.com/danseaver/rails-jenkins)

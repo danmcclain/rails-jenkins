@@ -1,4 +1,4 @@
-!SLIDE commandline smaller
+!SLIDE commandline small
 # Installing on Ubuntu #
 
 ## jenkins-ci.org has binaries available for Ubuntu ##
@@ -11,6 +11,9 @@ Add jenkins-ci.org's repository to your apt's sources list
 
     $ sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > \
     /etc/apt/sources.list.d/jenkins.list'
+
+!SLIDE commandline small
+# Installing on Ubuntu #
 
     $ sudo apt-get update
     $ sudo apt-get install jenkins
@@ -25,6 +28,16 @@ presentation.
 
 Manage your plugins using the Plugin Manager (http://\<jenkins domain>/pluginManager)
 
+!SLIDE center
+# Jenkins Plugins #
+![Plugin Manager](plugin-manager.png)
+
+!SLIDE
+# Git Settings #
+Navigate to `http://<jenkins domain>/configure`
+
+In the **Git Plugin** section, you'll want to set the **Global Config user.name Value** and **Global Config user.email Value**
+
 !SLIDE
 # Shell Settings #
 Navigate to `http://<jenkins domain>/configure`
@@ -33,10 +46,6 @@ In the **Shell** section, you'll want to set the **Shell executable**
 
 We'll use `/bin/bash` for this presentation
 
-
-!SLIDE
-# Git Settings #
-Navigate to `http://<jenkins domain>/configure`
-
-In the **Git Plugin** section, you'll want to set the **Global Config user.name Value** and **Global Config user.email Value**
-
+!SLIDE center
+# Git & Shell Settings #
+![Configure](configure.png)
