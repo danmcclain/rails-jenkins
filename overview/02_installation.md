@@ -1,4 +1,4 @@
-!SLIDE commandline small
+!SLIDE commandline smaller
 # Installing on Ubuntu #
 
 ## jenkins-ci.org has binaries available for Ubuntu ##
