@@ -111,4 +111,44 @@ We'll use the following build step:
     bundle install           # Installs gems
     rake db:schema:load      # Loads all the database schema
     rake                     # Runs RSpec
-    
+
+!SLIDE center
+# Output #
+![RSpec Console Output](rspec-console-output.png)
+
+!SLIDE smaller
+# Better RSpec Output #
+We can take advantage of the fact that Jenkins will serve HTML files in
+the workspace and RSpec's HTML formatter
+
+    source ~/.bashrc
+    cd .
+    rm -rf jenkins && mkdir jenkins
+    cp config/database.example.yml config/database.yml
+    bundle install
+    rake db:schema:load
+    SPEC_OPTS="--format html" rake spec > jenkins/rspec.html
+
+!SLIDE center
+# Workspace Link #
+
+![Workspace Link](workspace-link.png)
+
+!SLIDE center
+# Our Jenkins Folder #
+
+![Jenkins Folder](jenkins-folder.png)
+
+!SLIDE center
+# RSpec HTML Output #
+![RSpec HTML](rspec-html.png)
+
+!SLIDE
+# More Information #
+
+### [Jenkins](http://jenkins-ci.org) ###
+
+
+### [My article on using Jenkins with Rails, RVM, RSpec, Cucumber & Capistrano](http://danseaver.com/blog/2011/11/22/using-jenkins-with-rails/) ###
+
+
