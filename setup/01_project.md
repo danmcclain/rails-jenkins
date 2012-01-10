@@ -152,6 +152,8 @@ the workspace and RSpec's HTML formatter
 
 * Make sure gem requirements are installed (postgres lib headers)
 * Make sure you install the ruby you use in your `.rvmrc`
+* Make sure you have a javascript runtime installed if you are using
+  Rails 3.1+
 
 !SLIDE small
 # More Information #
