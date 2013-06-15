@@ -4,9 +4,9 @@
 
 !SLIDE 
 # About me #
-Twitter: @dan_seaver
+Twitter: @_danmcclain
 
-GitHub: https://github.com/danseaver
+GitHub: https://github.com/danmcclain
 
-Blog: http://danseaver.com
+Blog: http://danmcclain.com
 
