@@ -162,8 +162,8 @@ the workspace and RSpec's HTML formatter
 [Jenkins](http://jenkins-ci.org)
 
 ## My article on using Jenkins with Rails, RVM, RSpec, Cucumber & Capistrano ##
-[http://danseaver.com/blog/2011/11/22/using-jenkins-with-rails/](http://danseaver.com/blog/2011/11/22/using-jenkins-with-rails/)
+[http://danmcclain.net/blog/2011/11/22/using-jenkins-with-rails/](http://danmcclain.net/blog/2011/11/22/using-jenkins-with-rails/)
 
 ## These Slides ##
-[http://rails-jenkins.danseaver.com](http://rails-jenkins.danseaver.com)
-[https://github.com/danseaver/rails-jenkins](https://github.com/danseaver/rails-jenkins)
+[http://rails-jenkins.danmcclain.net](http://rails-jenkins.danmcclain.net)
+[https://github.com/danmcclain/rails-jenkins](https://github.com/danmcclain/rails-jenkins)
